@@ -1,0 +1,382 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+  font: 600 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+}
+
+textarea {
+    color: #393e46;
+
+}
+
+.background {
+    padding-bottom: 100px;
+    background: rgb(204, 204, 204);
+}
+
+/* Side bar ------------------------------------------------------------ */
+
+h1 span {
+  color: #222831;
+}
+
+.fa-book {
+  margin-right: 10px;
+}
+
+#sidebar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: #34626c;
+  top: 0;
+  left: -300px;
+  transition: .8s;
+  z-index: 1;
+}
+
+#sidebar h1 {
+  margin: 50px;
+  color: #FFFF;
+  font-size: 45px;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar ul li {
+  list-style: none;
+  color: #FFFF;
+  font-size: 20px;
+  padding: 20px;
+
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  top: 30px;
+  left: 330px;
+}
+
+.toggle-btn span {
+  width: 45px;
+  height: 4px;
+  background-color: #34626c;
+  display: block;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+#sidebar .search input[type=text] {
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  font-family: Helvetica;
+  margin: 50px;
+}
+
+#past-entries {
+  letter-spacing: 5px;
+}
+
+.entry-btn {
+  text-align: center;
+  background-color: #839b97;
+  color: #ffffff;
+  padding: 8%;
+  width: 85%;
+  font: 600 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+
+.entry-btn:hover {
+  color: #839b97;
+  background-color: #ffffff;
+  transition: 0.5s;
+}
+
+
+
+/*  Entry Page ------------------------------------------------- */
+
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 100px;
+
+}
+
+page[size="A4"] {
+  width: 21cm;
+  height: 29.7cm;
+  padding: 1cm;
+}
+
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+#page textarea {
+  background-color: #ffffff;
+  width: 19cm;
+  height: 27.5cm;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  font-family: helvetica;
+  resize: none;
+  overflow: hidden;
+  word-wrap: break-word;
+  position: relative;
+
+}
+
+#page {
+  padding-top: 100px;
+}
+
+/* Buttons on top right ------------------------------------------- */
+
+#buttons {
+  display: grid;
+  position: fixed;
+  right: 20px;
+  top: 30px;
+}
+
+#buttons2 {
+  position: fixed;
+  right: 20px;
+  top: 30px;
+
+}
+
+.icon-btn {
+  background-color: #34626c;
+  border: none;
+  color: #ffffff;
+  padding: 12px 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  outline-style: none;
+}
+
+.icon-btn:hover {
+  color: #34626c;
+  background-color: #ffffff;
+  transition: 0.5s;
+}
+
+/* Instructions */
+
+.testimonial-text {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+#testimonials-carousel {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  padding: 5% 10%;
+  width: 50%;
+  height: 500px;
+  left: 25%;
+  top: 25%;
+  text-align: center;
+}
+
+.numbertext {
+ margin-top: 100px;
+ font-weight: bold;
+}
+
+.carousel-control-black {
+    filter: invert(100%);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+.blackscreen {
+       display: none; /* Hidden by default */
+       position: fixed; /* Stay in place */
+       z-index: 1; /* Sit on top */
+       padding-top: 400px; /* Location of the box */
+       left: 0;
+       top: 0;
+       width: 100%; /* Full width */
+       height: 100%; /* Full height */
+       overflow: auto; /* Enable scroll if needed */
+       background-color: rgb(0,0,0); /* Fallback color */
+       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   }
+
+/* Save notification */
+
+.alert {
+  background: #ffffff;
+  padding: 20px 40px;
+  width: 350px;
+  border-left: 5px solid #34626c;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.alert.showAlert {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.alert.show {
+  animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+
+  40% {
+    transform: translateX(-10%);
+  }
+
+  80% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.alert.hide {
+  animation: hide_slide 1s ease forwards;
+}
+
+@keyframes hide_slide {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  40% {
+    transform: translateX(0%);
+  }
+
+  80% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.fa-check-circle {
+  position: absolute;
+  padding: 0 10px;
+  left: 20px;
+  color: #75b173;
+  font-size: 30px;
+  border-left: 8px solid #34626c;
+}
+
+.msg {
+  padding: 0 60px;
+  font-size: 18px;
+  color: #38804a;
+}
+
+.close-btn {
+  position: absolute;
+  background: #34626c;
+  cursor: pointer;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.fa-times:hover {
+  color: red;
+  transition: 0.5s;
+}
+
+
+.fa-times {
+  color: #ffffff;
+  font-size: 20px;
+  padding: 15px;
+}
+
+/* Searched articles pop-up */
+
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  width:500px;
+  height:250px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#222;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup.active .overlay {
+  display:block;
+}
+
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}

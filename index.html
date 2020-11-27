@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dearcovid</title>
+  <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="background">
+
+    <!-- sidebar -->
+
+    <!-- <body onload="get()"> -->
+
+    <div id="sidebar">
+      <div class="toggle-btn" onclick="show()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <h1>dear<span>covid</span></h1>
+
+      <ul>
+
+        <li id="past-entries"><i class="fas fa-book"></i>Past entries </li>
+
+        <!--saved past entries-->
+
+
+        <li>
+          <div onclick="loadText()" type="button" name="button" class="entry-btn" id=text1></i>Entry #1</div>
+        </li>
+
+        <li>
+          <div onclick="loadText2()" type="button" name="button" class="entry-btn" id=text2>Entry #2</div>
+        </li>
+
+        <li>
+          <div onclick="loadText3()" type="button" name="button" class="entry-btn" id=text3>Entry #3</div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- a4 page -->
+
+    <div id="page">
+
+      <div id="OGpage">
+        <page size="A4">
+          <div class="text">
+            <form id="myForm" action="index.html" method="post">
+              <textarea id="myTextarea" class="text" name="text" placeholder="Let's talk about how you're feeling..."></textarea>
+          </div>
+          </form>
+        </page>
+      </div>
+
+      <!--prompts-->
+
+      <page size="A4" style="display:none;" id="template">
+
+        <div id="template">
+          <div class="text">
+            <form action=" /action_page.php">
+              <textarea id="myTextarea" class="text" name="text">
+Dear COVID,
+
+
+
+How has your week been?
+
+
+
+How has your life changed since COVID-19?
+
+
+
+Have these changes been hard on you?
+
+
+
+Why or Why not?
+
+
+
+Have you been worried about anything COVID related?
+
+
+
+Is there anything else you'd like to talk about?
+  </textarea>
+            </form>
+          </div>
+        </div>
+        <br><br>
+
+      </page>
+    </div>
+
+    <div id="myblackscreen" class="blackscreen">
+
+      <div id="testimonials-carousel" class="carousel slide" data-ride="false">
+
+        <div class="carousel-inner">
+          <div class="carousel-item active container-fluid">
+            <h2 class="testimonial-text">Welcome to dearcovid </h2><br>
+            <em>This is a safe space that serves as your COVID-Journal or anything else that you would like to write about !<br>
+              This website is meant to help you locate factually correct articles on COVID related worries.</em>
+            <div class="numbertext">1/7</div>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">Saving your entry</h2>
+            <em>Once you write out your diary entry, press <img src="images/save-icon.png" alt=""> to submit it.</em>
+            <div class="numbertext">2/7</div>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">Articles related</h2>
+            <em>There will be a pop up box on the right side with a list of articles and reports that you can choose from.</em>
+            <div class="numbertext">3/7</div>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">Accessing your entries</h2>
+            <em>To view your past entries, click on the left to expand a list.</em>
+            <div class="numbertext">4/7</div>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">Accessing the instructions</h2>
+            <em>To view these instructions again, simply press on the <img src="images/info-icon.png" alt=""> icon on the top right hand corner !</em>
+            <div class="numbertext">5/7</div>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">Don't know what to write about?</h2>
+            <em>Press the help button <img src="images/question-icon.png" alt=""> for some suggestions.</em>
+            <div class="numbertext">6/7</div>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="testimonial-text">Let's begin!</h2>
+            <div class="numbertext">7/7</div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#testimonials-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon carousel-control-black"></span>
+        </a>
+        <a class="carousel-control-next" href="#testimonials-carousel" role="button" data-slide="next">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <span class="carousel-control-next-icon carousel-control-black"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- buttons -->
+
+    <div id="buttons">
+      <!-- intro button -->
+      <button class=" icon-btn" onclick="openModal();currentSlide(1)" id="info-icon"><i class="fa fa-info icon" aria-hidden="true"></i></button>
+
+      <!-- question button -->
+      <button class=" icon-btn" onclick="showDiv ()" id="?-icon"><i class="fa fa-question-circle icon" aria-hidden="true"></i></button>
+
+      <!-- save button -->
+      <button class=" icon-btn" onclick="mySave()" onclick="togglePopup()" id="save-icon"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+
+    </div>
+
+    <!--Save notification alert-->
+    <div id="buttons2">
+      <div class="alert hide">
+        <span class="fas fa-check-circle"></span>
+        <span class="msg">Entry saved!</span>
+        <div class="close-btn">
+          <span class="fas fa-times"></span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="popup" id="popup-1">
+      <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopup()">&times;        </div>
+        <h1>Articles</h1>
+        <ul id="articles"></ul>
+      </div>
+    </div>
+
+
+ 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </div>
+</body>
+
+</html>
