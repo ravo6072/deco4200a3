@@ -39,6 +39,7 @@ $('#save-icon').click(function(){
 var Saved = [];
 
 function mySave() {
+  console.log('s')
   var myContent = document.getElementById("myTextarea").value;
   localStorage.setItem("myContent", myContent);
 
@@ -159,6 +160,7 @@ saveBtn.onclick = () => {
     }
   });
   togglePopup()
+  mySave()
 };
 
 
